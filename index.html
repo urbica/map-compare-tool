@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Mapbox -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Yandex -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+    <!-- 2GIS -->
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+
+    <style>
+        body { margin:0; padding:0; }
+        #maps-wrapper { display: flex; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; flex-direction: row; }
+        .mapContainer { display: block; width: 100%;  height: 100%; border: 1px solid #555; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+  <div id='maps-wrapper'>
+    <div class="mapContainer" id='map-mapbox'></div>
+    <div class="mapContainer" id='map-yandex'></div>
+    <div class="mapContainer" id='map-2gis'></div>
+    <div class="mapContainer" id='map-osm'></div>
+  </div>
+
+
+<script src='src/compare.js'></script>
+
+</body>
+</html>
