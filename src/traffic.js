@@ -27,7 +27,7 @@ yandex = new ymaps.Map('map-yandex', {
             searchControlProvider: 'yandex#search'
         });
 
-var actualProvider = new ymaps.traffic.provider.Actual({}, { infoLayerShown: true });
+var actualProvider = new ymaps.traffic.provider.Actual({}, { infoLayerShown: false });
             // И затем добавим его на карту.
 actualProvider.setMap(yandex);
 
