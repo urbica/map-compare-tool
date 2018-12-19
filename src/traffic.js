@@ -49,11 +49,22 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IkRjTUFYdGsifQ.30RhErOKbQ
         //maps.mapbox.setZoom(params.zoom);
       },
       yandex: function() {
-        console.log('change yandex', params);
         yandex.setZoom(params.zoom);
-        yandex.setCenter([params.lat,params.lng]);
+        yandex.panTo([params.lat,params.lng]);
       }
     }
+
+    mbx.on('moveend', function() {
+      ll = mbx.getCenter();
+      params.lng = ll.lng;
+      params.lat = ll.lat;
+      params.zoom = mbx.getZoom() + 1;
+      //mbx.setZoom(5);
+      change.yandex();
+    //  change.gis2();
+    //  change.osm();
+
+    });
 
     yandex.events.add('boundschange', function (event) {
           ll = event.get('newCenter');
